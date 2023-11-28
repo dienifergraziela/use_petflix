@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>PetFlix</title>
+    <script src="https://kit.fontawesome.com/e283f09c57.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagens/logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
+    <link href="./css/home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-light">
+      <div class="container-fluid">
+        <img src="./img/navimage.png" style="width: 25vh; margin-left: 3vw;"/>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse text-end" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #000; text-decoration: underline"> Páginas </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/">Início</a></li>
+                  <li><a class="dropdown-item" href="/sobre">Sobre</a></li>
+                  <li><a class="dropdown-item" href="/parceiros">Parceiros</a></li>
+                  <li><a class="dropdown-item" href="/conteudos">Conteúdos</a></li>
+                  <li><a class="dropdown-item" href="/cadastrarPet">Cadastrar pet</a></li>
+                  <li><a class="dropdown-item" href="/users">Pessoas e Ong's</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/pets" style="color: #000; text-decoration: underline">Adotar</a></li>
+            <li class="nav-item"><a class="nav-link" href="/perfil" style="color: #000; text-decoration: underline">Perfil</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true" style="margin-top: 5.1rem">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/Tela sobre.png" class="d-block w-100" />
+        </div>
+      </div>
+    </div>
+
+    <section id="features" class="features section-bg">
+        <div class="container" data-aos="fade-up">
+          <ul class="nav nav-tabs row  g-2 d-flex">
+            <li class="nav-item col-3">
+              <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                <h4>Sobre Nós</h4>
+              </a>
+            </li>
+            <li class="nav-item col-3">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                <h4>Como Funciona</h4>
+              </a>
+            <li class="nav-item col-3">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                <h4>Importância da Adoção</h4>
+              </a>
+            </li>
+            <li class="nav-item col-3">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                <h4>Centros de Ajuda</h4>
+              </a>
+            </li>
+          </ul>
+  
+          <div class="tab-content">
+  
+            <div class="tab-pane active show" id="tab-1">
+              <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                  <h3>Sobre nós:</h3>
+                  <p>
+                    ㅤSomos um site, planejado e desenvolvido à partir do trabalho de
+                    conclusão de curso dos alunos Dienifer Graziela Ripl e Thales
+                    Augusto Fantinel Malta da Escola Técnica Estadual Monteiro Lobato
+                    - CIMOL.
+                  </p>
+                  <p>
+                    ㅤEsse site foi feito como um ato de amor e solidariedade aos
+                    animais que vivem nos abrigos públicos que estão aguardando uma
+                    nova chance de ter um lar e uma família que ame e cuide deles.
+                  </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                  <img src="./imagens/Design sem nome (18).png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+  
+            <div class="tab-pane" id="tab-2">
+              <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                  <h3>Como funciona o PetFlix:</h3>
+                  <p>
+                    ㅤ O Programa PetFlix é a conexão que faltava entre você e o seu
+                    melhor amigo: através do cadastro e atuação de ONGs e institutos
+                    protetors e diversas instituições parceiras, diversos cães e gatos
+                    têm a chance de encontrar um lar seguro para eles. Para nós,
+                    adotar é um momento de felicidade, que deve ser construído com
+                    parceria, cuidado e responsabilidade.
+                  </p>
+                  <p>
+                    ㅤ Somos uma rede de apaixonados por pets e queremos incentivar a
+                    adoção, conscientizar sobre a posse responsável e ajudar a
+                    diminuir o índice de animais abandonados através deste projeto e
+                    ações para melhoria de bem estar de pets e instituições parceiras
+                    em toda a nossa região!
+                  </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                  <img src="./imagens/Design sem nome (20).png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+  
+            <div class="tab-pane" id="tab-3">
+              <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                  <h3>Importância da adoção:</h3>
+                  <p>
+                    ㅤA adoção é um ato de amor e solidariedade que não apenas transforma a vida de um animal, mas também traz inúmeros benefícios para as pessoas. Adotar um animal significa dar uma segunda chance a eles, tornando-se responsável por um novo membro da família e desfrutando de benefícios para a saúde física e mental. Além disso, é um gesto de amor e empatia que ensina lições valiosas sobre o amor e a lealdade.
+                  </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                  <img src="./imagens/Design sem nome (19).png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+  
+            <div class="tab-pane" id="tab-4">
+              <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                  <h3>Importância dos centros de ajuda:</h3>
+                  <p>
+                    ㅤMuitos centros de ajuda aos animais desempenham um papel crucial na proteção de animais em situações de risco. Gerenciados por organizações sem fins lucrativos, eles oferecem serviços como abrigo, cuidados veterinários, alimentação e programas de adoção. Esses locais proporcionam um refúgio seguro e confortável para animais em necessidade, promovendo seu bem-estar e conscientização sobre a importância da proteção animal. A colaboração com outras organizações reforça o cuidado oferecido.
+                  </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                  <img src="./imagens/Design sem nome (21).png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+
+    <section id="services" class="services" style="background-color: #f4f4f4;">
+
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Funções</h2>
+          <p>O nosso sistema possui 2 funções base, sendo elas:</p>
+        </div>
+  
+        <div class="container">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item d-flex">
+                <div class="icon flex-shrink-0" style="margin-right: 15px;"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <div>
+                  <h4 class="title">Adoção</h4>
+                  <p class="description">A adoção é o ato de receber um animal de estimação em sua casa, proporcionando-lhe um lar permanente, amor, cuidados e uma família que o considera parte dela. Isso oferece uma segunda chance para animais abandonados ou em abrigos, permitindo-lhes viver uma vida feliz e saudável com pessoas que os acolhem como membros da família. É um ato de compaixão e responsabilidade.</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item d-flex">
+                <div class="icon flex-shrink-0" style="margin-right: 15px;"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <div>
+                  <h4 class="title">Apadrinhamento</h4>
+                  <p class="description">O apadrinhamento é uma ação solidária na qual indivíduos ou organizações fornecem apoio financeiro para cuidar de animais em abrigos ou instituições, garantindo que suas necessidades sejam atendidas, como alimentação e tratamento veterinário, mesmo sem adotá-los permanentemente. É uma forma de oferecer ajuda a animais necessitados.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Apresentações</h2>
+          <p>O projeto foi apresentado em feiras e eventos técnológicos, veja alguns deles:</p>
+        </div>
+  
+        <div class="container">
+  
+          <div class="row gy-4 align-items-center features-item">
+            <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+              <h3>Apresentação na semana da Informática.</h3>
+              <p>
+                No mês de julho, o projeto foi apresentado na Semana da Informática da escola Cimol, onde se teve uma grande aprovação do projeto.
+              </p>
+            </div>
+            <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+              <div class="image-stack">
+                <img src="./imagens/Design sem nome (18).png" alt="" class="stack-front">
+                <img src="./imagens/Design sem nome (19).png" alt="" class="stack-back">
+              </div>
+            </div>
+          </div>
+  
+          <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+            <div class="col-lg-6 d-flex align-items-center features-img-bg">
+              <img src="./imagens/LindaFotoFebic (1).png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-5 d-flex justify-content-center flex-column mt-0">
+              <h3>Projeto destaque do Bem-Estar Animal</h3>
+              <p>No ano de 2023 aconteceu a Feira Brasileira de Iniciação Científica na cidade de Pomerode - SC, onde o projeto foi apresentado e recebeu algumas premiações.</p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i></i></i> <span>Destaque de Bem-Estar Animal.</span></li>
+                <li><i class="fa-solid fa-check"></i></i></i><span> Credencial de participação para a feira FITEC.</span></li>
+              </ul>
+            </div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+    <section id="team" class="team mt-5">
+
+      <!--  Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Membros</h2>
+        <p>Como nada na vida se faz sozinho, aqui estão as pessoas que fizeram com que esse projeto exista</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="imagens/Dienifer.png" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Dienifer Graziela Ripl</h4>
+              <span>Desenvolvedora do projeto</span>
+              <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="./imagens/Diego.png" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Diego Candido de Souza</h4>
+              <span>Orientador do projeto</span>
+              <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
+            <div class="member-img">
+              <img src="./imagens/Thales.png" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Thales Fantinel Malta</h4>
+              <span>Desenvolvedor do projeto</span>
+              <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi cupiditate vel</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Onde estudamos</h2>
+          <p>Conheça um pouco sobre onde nós estudamos.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="info">
+              <div class="address">
+                <i class="fa-solid fa-thumbtack"></i>
+                <h4>Localização:</h4>
+                <p>R. Guilherme Lahm, 1778 - Taquara - RS</p>
+              </div>
+
+              <div class="email">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>Email:</h4>
+                <p>cimol@cimol.g12.br</p>
+              </div>
+
+              <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+                <h4>Telefone:</h4>
+                <p>(51) 93542-1309</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1676.5108561769753!2d-50.78659051499889!3d-29.64808400894958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951918e0edcbb4bb%3A0x85390ddad6745e40!2sEscola%20T%C3%A9cnica%20Estadual%20Monteiro%20Lobato!5e0!3m2!1spt-BR!2sbr!4v1698841092616!5m2!1spt-BR!2sbr" width="470" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <img src="./imagens/FotoCimol.jpeg" class="mb-4 img-fluid" style="height: 230px; width: 100%; object-fit: cover;">
+                <p>
+                Estudar na Escola Técnica Cimol é uma decisão de grande importância, repleta de razões significativas para quem deseja uma educação excepcional e oportunidades profissionais de destaque. O Cimol é uma instituição com um histórico de excelência na formação de estudantes para carreiras técnicas, e isso a torna uma escolha valiosa.
+                Então, por que alguém optaria por estudar na Cimol? Existem diversas motivações que tornam essa escolha tão relevante:
+                </p>
+                <p>
+                Em primeiro lugar, a Cimol oferece uma educação de alto nível, com professores qualificados e programas educacionais atualizados. Os alunos têm acesso a um currículo sólido que combina teoria e prática, preparando-os de forma abrangente para suas futuras carreiras.
+                </p>
+                <p>
+                    Além disso, a escola se destaca na especialização técnica. Os estudantes têm a oportunidade de se aprofundar em áreas como Eletrônica, Eletrotécnica, Mecânica, Informática, Design de Móveis, Móveis, Química e Meio Ambiente, o que os prepara para atender às demandas do mercado de trabalho com conhecimento especializado.
+                </p>
+                <p>
+                    Os graduados da Cimol são altamente valorizados pelos empregadores, graças à qualidade de sua formação técnica. Eles estão bem preparados para atender às necessidades das indústrias locais e globais, o que resulta em excelentes oportunidades de emprego.
+                </p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg mt-5" style="background-color: #260D33;">
+      <div class="container-fluid">
+          <img style="width: 25vh; margin-left: 5vw;" src="./img/logofooter.png" />
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left: 25vw">
+              <ul id="footer" class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active text-light" aria-current="page" href="/sobre" style="color: #000;">Topo</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active text-light" aria-current="page" href="/pets" style="color: #000;">Adotar</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-light" href="/" style="color: #000;">Início</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
+      faqItem.addEventListener('click', () => {
+        faqItem.parentNode.classList.toggle('faq-active');
+      });
+    });
+    </script>
+  </body>
+</html>

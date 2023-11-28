@@ -1,0 +1,141 @@
+<%- include('layouts/default/Navbar') %>
+
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true" style="margin-top: 5.1rem">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/Tela adote.png" class="d-block w-100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="row">
+          <div class="col">
+              <label for="especie" class="form-label">Espécie:</label>
+              <select id="filtroEspecie" class="form-select form-select-sm">
+                  <option value="">Todas</option>
+                  <option value="Cachorro">Cachorro</option>
+                  <option value="Gato">Gato</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <label for="idade" class="form-label">Idade:</label>
+              <select id="filtroIdade" class="form-select form-select-sm">
+                  <option value="">Todas</option>
+                  <option value="1">1 ano</option>
+                  <option value="2">2 anos</option>
+                  <option value="3">3 anos</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <label for="porte" class="form-label">Porte:</label>
+              <select id="filtroPorte" class="form-select form-select-sm">
+                  <option value="">Todos</option>
+                  <option value="Pequeno">Pequeno</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Grande">Grande</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <label for="localizacao" class="form-label">Localização:</label>
+              <select id="filtroLocalizacao" class="form-select form-select-sm">
+                  <option value="">Todas</option>
+                  <option value="Sapiranga - RS">Sapiranga - RS</option>
+              </select>
+          </div>
+
+          <div class="col">
+              <label for="genero" class="form-label">Gênero:</label>
+              <select id="filtroGenero" class="form-select form-select-sm">
+                  <option value="">Todos</option>
+                  <option value="Macho">Macho</option>
+                  <option value="Fêmea">Fêmea</option>
+              </select>
+          </div>
+
+          <div class="col d-flex flex-column justify-content-center align-items-center px-0 me-0">
+              <button type="button" onclick="aplicarFiltros()" class="btn btn-outline-dark bg-info">Aplicar</button>
+          </div>
+
+          <div class="col d-flex flex-column justify-content-center align-items-center px-0 ms-0">
+              <button type="button" onclick="limparFiltros()" class="btn btn-outline-dark bg-info">Limpar</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="py-5">
+          <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="listaAnimais">
+            <% listaPets.forEach(function(pet) { %>
+            <div class="col mb-5">
+              <div class="card h-100" data-especie="<%= pet.especie %>" data-idade="<%= pet.idade %>" data-porte="<%= pet.porte %>" data-localizacao="<%= pet.localizacao %>" data-genero="<%= pet.genero %>">
+                <img class="card-img-top" src="/<%= pet.caminho_imagem %>" style="width: auto;height: 250px; object-fit: cover;" onerror="this.src='/img/perfilSemFoto.png';" alt="Sem foto"/>
+                <div class="card-body p-4">
+                  <div class="text-center">
+                    <h5 class="fw-bolder text-start"><%= pet.nome %></h5>
+                    <h6 class="text-start"><%= pet.localizacao %></h6>
+                    <h6 class="text-start"><%= pet.objetivo %></h6>
+                  </div>
+                </div>
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center">
+                    <a class="btn btn-outline-dark mt-auto bg-info" href="/pets/<%= pet.id_animal %>/<%= pet.user_id_user %>">Quero Adotar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+      </section>
+    </div>
+
+    <script>
+      function aplicarFiltros() {
+        const especieSelecionada =
+          document.getElementById("filtroEspecie").value;
+        const idadeSelecionada = document.getElementById("filtroIdade").value;
+        const porteSelecionado = document.getElementById("filtroPorte").value;
+        const localizacaoSelecionada =
+          document.getElementById("filtroLocalizacao").value;
+        const generoSelecionado = document.getElementById("filtroGenero").value;
+
+        const listaAnimais = document.getElementById("listaAnimais");
+        const todosOsPets = listaAnimais.querySelectorAll(".card");
+
+        todosOsPets.forEach(function (pet) {
+          const petEspecie = pet.getAttribute("data-especie");
+          const petIdade = pet.getAttribute("data-idade");
+          const petPorte = pet.getAttribute("data-porte");
+          const petLocalizacao = pet.getAttribute("data-localizacao");
+          const petGenero = pet.getAttribute("data-genero");
+
+          if (
+            (especieSelecionada === "" || petEspecie === especieSelecionada) &&
+            (idadeSelecionada === "" || petIdade === idadeSelecionada) &&
+            (porteSelecionado === "" || petPorte === porteSelecionado) &&
+            (localizacaoSelecionada === "" ||
+              petLocalizacao === localizacaoSelecionada) &&
+            (generoSelecionado === "" || petGenero === generoSelecionado)
+          ) {
+            pet.style.display = "block";
+          } else {
+            pet.style.display = "none";
+          }
+        });
+      }
+
+      function limparFiltros() {
+        document.getElementById("filtroEspecie").value = "";
+        document.getElementById("filtroIdade").value = "";
+        document.getElementById("filtroPorte").value = "";
+        document.getElementById("filtroLocalizacao").value = "";
+        document.getElementById("filtroGenero").value = "";
+
+        aplicarFiltros();
+      }
+    </script>
+
+<%- include('layouts/default/Footer') %>

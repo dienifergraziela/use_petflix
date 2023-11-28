@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar parceiro</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+    <h1>Editar parceiro</h1>
+
+    <% parceiro.forEach(function(parceiro) { %>
+
+        <form action="/parceiros/<%= parceiro.id_parceiro %>/editar" method="POST">
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="nome" value="<%= parceiro.nome %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="tipo" value="<%= parceiro.tipo %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="descricao" value="<%= parceiro.descricao %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="endereco" value="<%= parceiro.endereco %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="telefone" value="<%= parceiro.telefone %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..."name="servico_oferecido" value="<%= parceiro.servico_oferecido %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..."name="horario_funcionamento" value="<%= parceiro.horario_funcionamento %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="rede_social" value="<%= parceiro.rede_social %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="rg" value="<%= parceiro.rg %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="cpf" value="<%= parceiro.cpf %>" />
+            </div>
+
+            <div class="col-sm-9">
+                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="cnpj" value="<%= parceiro.cnpj %>" />
+            </div>
+
+            <img src="/<%= parceiro.caminho_imagem %>" class="img-fluid img-thumbnail mt-4 mb-2" />
+
+            <label for="file">Selecione uma nova imagem:</label>
+            <input type="file" name="file" id="imagem">
+            <input type="submit" value="Salvar">
+        </form>
+        <% }) %>
+    </body>
+</html>

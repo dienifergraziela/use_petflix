@@ -1,0 +1,130 @@
+<%- include('layouts/default/Navbar') %>
+
+  <section class="ftco1-section" style="margin-top: 5.1rem;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-10">
+          <div class="wrap d-md-flex">
+            <div class="img" style=" background-image: url(/imagens/Faça\ agora\ o\ seu\ login!.png);"></div>
+            <div class="login-wrap p-5 p-md-5">
+              <div class="d-flex">
+                <div class="w-100">
+                  <h3 class="mb-2" style="font-weight: 400; font-family: Lato, Arial, sans-serif;">Cadastrar um pet</h3>
+                </div>
+              </div>
+
+              <form action="/cadastrarPet" class="signin-form" method="POST" enctype="multipart/form-data">
+                <div class="form-group mb-0">
+                  <label class="label mb-2" for="nome" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Nome</label>
+                  <input type="text" class="form-control mb-2" placeholder="Digite aqui..." style="font-family: inherit; border: 1px solid rgba(0, 0, 0, 0.1); color: #495057;" name="nome" required />
+                </div>
+
+                <div class="form-group mb-0" id="genero">
+                  <label class="label mb-2" for="nome" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Gênero</label>
+                  <div class="mb-2">
+                    <input class="ml-1 mr-1" name="genero" type="radio" value="Macho" <%='Macho' ? 'selected' : '' %>>Macho
+                    <input class="ml-1 mr-1 " name="genero" type="radio" value="Fêmea" <%='Fêmea' ? 'selected' : '' %>>Fêmea
+                  </div>
+                </div>
+
+                <div class="form-group mb-0 " id="porte">
+                  <label class="label mb-2" for="nome" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Porte</label>
+                  <div class="mb-2">
+                    <input class="ml-1 mr-1" name="porte" type="radio" value="Grande" <%='Grande' ? 'selected' : '' %>>Grande
+                    <input class="ml-1 mr-1" name="porte" type="radio" value="Médio" <%='Médio' ? 'selected' : '' %>>Médio
+                    <input class="ml-1 mr-1" name="porte" type="radio" value="Médio" <%='Pequeno' ? 'selected' : '' %>>Pequeno
+                  </div>
+                </div>
+
+                <div class="form-group mb-0">
+                  <label class="label mb-2" for="localizacao" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Localização</label>
+                  <input type="text" class="form-control mb-2" placeholder="Digite aqui..." name="localizacao" list="cidades" style="font-family: inherit; border: 1px solid rgba(0, 0, 0, 0.1);" required />
+                  <datalist id="cidades">
+                    <script>
+                      document.addEventListener('DOMContentLoaded', function () {
+                        const inputLocalizacao = document.querySelector('input[name="localizacao"]');
+                        const datalistCidades = document.getElementById('cidades');
+
+                        // Carregue o arquivo JSON localmente
+                        fetch('cidades-brasil.json')
+                          .then(response => response.json())
+                          .then(data => {
+                            // Itera sobre a lista de cidades e adiciona as opções ao datalist
+                            data.cidades.forEach(cidade => {
+                              const option = document.createElement('option');
+                              option.value = cidade;
+                              datalistCidades.appendChild(option);
+                            });
+                          })
+                          .catch(error => console.error('Erro ao carregar cidades:', error));
+                      });
+                    </script>
+                  </datalist>
+                </div>
+
+                <div class="form-group mb-0">
+                  <label class="label mb-2" for="especie" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Espécie</label>
+                  <input type="text" list="especies" class="form-control mb-2" placeholder="Digite aqui..." name="especie" style="font-family: inherit; border: 1px solid rgba(0, 0, 0, 0.1);" required />
+                  <datalist id="especies">
+                    <option value="Cachorro"></option>
+                    <option value="Gato"></option>
+                    <option value="Rammstein"></option>
+                    <option value="Galinha"></option>
+                    <option value="Cavalo"></option>
+                  </datalist>
+                </div>
+
+                <div class="form-group mb-0">
+                  <label class="label mb-2" for="idade" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Idade(se souber)</label>
+                  <input type="text" list="idd" class="form-control mb-2" placeholder="Digite aqui..." name="idade" style="font-family: inherit; border: 1px solid rgba(0, 0, 0, 0.1);" required />
+                  <datalist id="idd">
+                    <option value="1 ano"></option>
+                    <option value="2 anos"></option>
+                    <option value="3 anos"></option>
+                    <option value="4 anos"></option>
+                    <option value="5 anos"></option>
+                  </datalist>
+                </div>
+                <div class="form-group mb-0" id="vacina_obrigatoria">
+                  <div>
+                    <label class="label mb-2" for="vacina_obrigatoria" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Vacinas</label>
+                    <input type="text" class="form-control mb-2" placeholder="Digite aqui..." name="vacina_obrigatoria" style="font-family: inherit; border: 1px solid rgba(0, 0, 0, 0.1);" required />
+                  </div>
+                </div>
+
+                
+
+                <div class="form-group mb-0" id="objetivo">
+                  <label class="label mb-2" for="nome" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Objetivo</label>
+                  <div name="objetivo" class="mb-2">
+                    <input class="ml-1 mr-1" type="radio" name="objetivo" value="Adoção" <%='Adoção' ? 'selected' : ''
+                      %>>Adoção
+                    <input class="ml-1 mr-1" type="radio" name="objetivo" value="Apadrinhamento" <%='Apadrinhamento'
+                      ? 'selected' : '' %>>Apadrin.
+                    <input class="ml-1  mr-1" type="radio" name="objetivo" value="Desaparecido" <%='Desaparecido'
+                      ? 'selected' : '' %>>Desapar.
+                  </div>
+                </div>
+
+
+                <div class="form-group mb-0">
+                  <label class="label mb-2" for="descricao" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Descrição</label>
+                  <input type="text" class="form-control mb-2" placeholder="Digite aqui..." name="descricao" style="font-family: inherit; border: 1px solid rgba(0, 0, 0, 0.1);" required />
+                </div>
+
+                <div class="form-group mb-0">
+                  <label class="label mb-2" for="imagem" style="font-weight: 700; font-size: 12px; text-transform: uppercase; font-family: Lato, Arial, sans-serif">Selecione uma imagem:</label>
+                  <input type="file" name="file" id="imagem" class="mb-2" required>
+                  <div class="pt-3">
+                    <input type="submit" value="Enviar" class="form-control btn btn-primary rounded submit px-3 text-light" style="font-family: inherit;">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include('layouts/default/Footer') %>

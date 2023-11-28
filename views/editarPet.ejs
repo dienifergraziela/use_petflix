@@ -1,0 +1,156 @@
+<%- include('layouts/default/Navbar') %>
+
+    <% pet.forEach(function(pet) { %>
+
+        <form action="/pets/<%= pet.id_animal %>/editar" method="POST" style="display: inline_block;"enctype="multipart/form-data">
+            <div class="container" style="padding-top: 100px">
+                <div class="main-body">
+                    <div class="row gutters-sm">
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <img src="/<%= pet.caminho_imagem %>" class="img-fluid img-thumbnail mt-4 mb-2" />
+                                        <hr />
+                                        <div>
+                                            <button type="submit" class="btn" style="background-color: #e3b04b; color: #fff;">Finalizar edição
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <form action="/cadastrarPet" class="signin-form" method="POST">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar nome</h6>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control-sm border-1 mb-0" placeholder="Digite aqui..." name="nome" value="<%= pet.nome %>" />
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar objetivo</h6>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <select class="border-1 form-control-sm" name="objetivo" id="objetivo"required>value="<%= pet.objetivo %>"
+                                                    <option value="Adoção" <%=pet.objetivo==='Adoção' ? 'selected': '' %>>Adoção</option>
+                                                    <option value="Apadrinhamento"<%=pet.objetivo==='Apadrinhamento' ? 'selected' : '' %>>Apadrinhamento</option>
+                                                    <option value="Desaparecido" <%=pet.objetivo==='Desaparecido'? 'selected' : '' %>>Desaparecido</option>
+                                                    <option value="Apadrinhado"<%=pet.objetivo==='Apadrinhado' ? 'selected' : '' %>>Apadrinhado</option>
+                                                    <option value="Adotado" <%=pet.objetivo==='Adotado'? 'selected' : '' %>>Adotado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar localização</h6>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control-sm border-1 mb-0"placeholder="Digite aqui..." name="localizacao"value="<%= pet.localizacao %>" required />
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar gênero</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <select class="border-1 form-control-sm" name="genero" id="genero">value="<%= pet.nome %>"
+                                                    <option value="Macho" <% if (pet.genero==="Macho" ) { %>selected <% } %>>Macho</option>
+                                                    <option value="Fêmea" <% if (pet.genero==="Fêmea" ) { %>selected <% } %>>Fêmea</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar porte</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <select class="border-1 form-control-sm" name="porte" id="porte"required>value="<%= pet.porte %>"
+                                                    <option value="Grande" <%=pet.porte==='Grande' ? 'selected' : ''%>>Grande</option>
+                                                    <option value="Médio" <%=pet.porte==='Médio' ? 'selected' : ''%>>Médio</option>
+                                                    <option value="Pequeno" <%=pet.porte==='Pequeno' ? 'selected': '' %>>Pequeno</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar espécie</h6>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control-sm border-1 mb-0"placeholder="Digite aqui..." name="especie"value="<%= pet.especie %>" required />
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar idade</h6>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control-sm border-1"placeholder="Digite aqui..." name="idade"value="<%= pet.idade %>" />
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar vacinas realizadas</h6>
+                                            </div>
+                                            <div class="col-sm-9 d-flex flex-row align-items-center">
+                                                <select class="border-1 form-control-sm" name="vacina_obrigatoria"id="vacina_obrigatoria">value="<%= pet.vacina_obrigatoria %>"
+                                                    <option value="v1" <%='v1' ? 'selected' : '' %>>v1</option>
+                                                    <option value="v2" <%='v2' ? 'selected' : '' %>>v2</option>
+                                                    <option value="v3" <%='v3' ? 'selected' : '' %>>v3</option>
+                                                    <option value="Nenhuma" <%='Nenhuma' ? 'selected' : '' %>>Nenhuma</option>
+                                                    <option value="Não sei dizer" <%='Não sei dizer' ? 'selected': '' %>>Não sei dizer</option>
+                                                    <option value="outra(s)" <%='outra(s)' ? 'selected' : '' %>>Outra(s)</option>
+                                                </select>
+                                                <div id="outraVacina" class="ms-3" style="display: none;">
+                                                    <label for="campoOutraVacina"></label>
+                                                    <input type="text" class="form-control-sm border-1"id="campoOutraVacina" name="vacina_obrigatoria"placeholder="Digite aqui..."value="<%= pet.vacina_obrigatoria %>">
+                                                </div>
+                                                <script>
+                                                    var selectVacina = document.getElementById("vacina_obrigatoria");
+                                                    var divOutraVacina = document.getElementById("outraVacina");
+
+                                                    selectVacina.addEventListener("change", function () {
+                                                        if (selectVacina.value === "outra(s)") {
+                                                            divOutraVacina.style.display = "block";
+                                                        } else {
+                                                            divOutraVacina.style.display = "none";
+                                                        }
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Editar descrição</h6>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <textarea type="text" class="form-control-sm border-1"placeholder="Digite aqui..." name="descricao"value="<%= pet.descricao %>"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="caminho_imagem" value="<%= pet.caminho_imagem %>">
+                                        <label for="file">Selecione uma nova imagem:</label>
+                                        <input type="file" name="file" id="imagem">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <% }) %>
+
+<%- include('layouts/default/Footer') %>

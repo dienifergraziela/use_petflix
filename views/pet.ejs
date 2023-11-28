@@ -1,0 +1,87 @@
+<%- include('layouts/default/Navbar') %>
+    
+      <main id="main">
+
+        <% pet.forEach(function(pet) { %>
+            <% user.forEach(function(user) { %>
+
+            <section id="service-details" class="service-details mt-5">
+                <div class="container">
+                    <div class="row gy-5">
+            
+                      <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+                        <img src="/<%= pet.caminho_imagem %>" style="object-fit: cover; width: 850px;height: 700px;" onerror="this.src='/img/perfilSemFoto.png';" class="img-fluid services-img">
+                        <h3><%= pet.nome %></h3>
+                        <p><strong>Descrição:</strong></p>
+                        <p><%= pet.descricao %></p>
+                    </div>                    
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-box">
+                        <h4>Informações Animal</h4>
+                        <div class="services-list">
+                            <p><strong>Objetivo:</strong> <%= pet.objetivo %></p>
+                            <p><strong>Nome:</strong> <%= pet.nome %></p>
+                            <p><strong>Idade:</strong> <%= pet.idade %></p>
+                            <p><strong>Localização:</strong> <%= pet.localizacao %></p>
+                            <p><strong>Gênero:</strong> <%= pet.genero %></p>
+                            <p><strong>Porte:</strong> <%= pet.porte %></p>
+                            <p><strong>Espécie:</strong> <%= pet.especie %></p>
+                            <!-- tem que arrumar as vacinas, pq estão aparecendo infinitamente quais que tem-->
+                            <p><strong>Vacinas:</strong> <%= pet.vacina_obrigatoria %></p>
+                        </div>
+                        </div>
+                        <div class="service-box">
+                            <h4>Informações do Dono</h4>
+                            <div class="services-list">
+                            <p><strong>Responsável:</strong><%= user.nome %></p>
+                            <p><strong>Contato:</strong> <%= user.telefone %></p>
+                            <p><strong>Email:</strong> <%= user.email %></p>
+                            <a href="/perfil/<%= user.nome %>/<%= user.id_user %>">Acessar perfil</a>
+                            </div>
+                        </div>       
+                        <div class="service-box">
+                        <h4>Opções Extra</h4>
+                        <div class="download-catalog">
+                          <a class="icon" href="/generateQRCode" target="_blank" download><i class="fa-solid fa-qrcode"></i><span>Gerar QRCode</span></a>
+                          <a class="icon" href="/generatePDF/<%= pet.id_animal %>/<%= pet.user_id_user %>" download><i class="fa-solid fa-file"></i><span>Gerar PDF</span></a>
+                          <a class="icon" href="" onclick="copiarLink()"><i class="fa-solid fa-link"></i><span>Copiar Link</span></a>
+                          <% if (pet.user_id_user == userId) { %>
+                            <div class="btn-group d-flex justify-content-between mt-3 mx-5">
+                              <form action="/pets/<%= pet.id_animal %>/excluir" method="POST" style="display: inline; color: #000;" class="rounded">
+                                <button class="btn btn-danger" type="submit">Excluir pet</button>
+                              </form>
+                              <form style="display: inline; background-color: #e3b04b" class="rounded">
+                                <button type="button" onclick="window.location.href='/pets/<%= pet.id_animal %>/editar'" class="btn">Editar pet</button>
+                              </form>
+                            </div>
+                          <% } %>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <% }) %>
+        <% }) %>
+      </main>
+    
+      <script>
+        function copiarLink() {
+          var linkDaPagina = window.location.href;
+      
+          var inputTemporario = document.createElement('input');
+          inputTemporario.setAttribute('value', linkDaPagina);
+          document.body.appendChild(inputTemporario);
+      
+          inputTemporario.select();
+          inputTemporario.setSelectionRange(0, 99999);
+      
+          document.execCommand('copy');
+      
+          document.body.removeChild(inputTemporario);
+      
+          alert('Link copiado: ' + linkDaPagina);
+        }
+      </script>
+      
+      <%- include('layouts/default/Footer') %>

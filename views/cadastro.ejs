@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>PetFlix</title>
+    <link rel="icon" href="./imagens/logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
+    <link href="./css/cadastro.css" rel="stylesheet" />
+  </head>
+  <body>
+        <section class="ftco-section pt-4 pb-1">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 col-lg-8">
+                        <div class="wrap">
+                            <div class="img" style="background-image: url(./imagens/cachorro\ cadastro\ copy.png);"></div>
+                            <div class="login-wrap p-4 pb-2">
+                                <div class="d-flex">
+                                    <div class="w-100">
+                                        <h3 class="mb-4">Criar conta</h3>
+                                    </div>
+                                </div>
+                                <form action="/cadastrar" class="signin-form" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mt-3">
+                                                <input type="text" class="form-control" name="nome" required>
+                                                <label class="form-control-placeholder" for="nome">Nome</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mt-3">
+                                                <input type="text" class="form-control" name="email" required>
+                                                <label class="form-control-placeholder" for="email">Email</label>
+                                            </div>
+                                            <% if (typeof emailCad !=='undefined' ) { %>
+                                                <div class="alert alert-danger">
+                                                    <%= emailCad %>
+                                                </div>
+                                            <% } %>
+            
+                                            <% if (typeof erro !=='undefined' ) { %>
+                                                <div class="alert alert-danger">
+                                                    <%= erro %>
+                                                </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="biografia" required>
+                                                <label class="form-control-placeholder" for="biografia">Biografia</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="cpf" required>
+                                                <label class="form-control-placeholder" for="cpf">CPF</label>
+                                            </div>
+                                            <% if (typeof cpfCad !=='undefined' ) { %>
+                                                <div class="alert alert-danger">
+                                                        <%= cpfCad %>
+                                                </div>
+                                            <% } %>
+            
+                                            <% if (typeof erro2 !=='undefined' ) { %>
+                                                <div class="alert alert-danger">
+                                                        <%= erro2 %>
+                                                </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="telefone" required>
+                                                <label class="form-control-placeholder" for="telefone">Telefone</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" name="senha" required>
+                                                <label class="form-control-placeholder" for="senha">Senha</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-control text-center">
+                                                <input class="mt-1" type="file" name="file" id="imagem" style="color: transparent;" required> Selecione uma foto de perfil
+                                                <label class="custom-file-upload"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Criar conta" class="form-control btn btn-primary rounded submit px-3">                                    
+                                    </div>
+                                </form>
+                                <p class="text-center mb-0"> Já tem conta? <a data-toggle="tab" href="/login">Entrar</a> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+</html>

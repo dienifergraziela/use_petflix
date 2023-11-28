@@ -1,0 +1,72 @@
+<%- include('layouts/default/Navbar') %>
+
+    <% user.forEach(function(user) { %>
+
+        <header class="py-5 bg-image-full" style="background-color: #bedcff; margin-top: 4.1rem;">
+            <% if (user.id_user == userId2) { %>
+                <div class="d-flex justify-content-end align-items-center mt-0 mb-3 mx-5">
+                    <a class="btn" style="background-color: #e3b04b; color: #fff; margin-right: 10px;"
+                        href="/perfil/<%= user.id_user %>/editar">Editar</a>
+                    <form action="/logout">
+                        <input class="btn btn-danger" type="submit" value="Sair" />
+                    </form>
+                </div>
+            <% } %>
+            <div class="text-center mt-5 mb-3">
+                <img class="img-fluid rounded-circle mb-4" style="height: 18rem; width: 18rem; object-fit: cover;"
+                    src="/<%= user.imagem %>" onerror="this.src='/img/perfilSemFoto.png';" />
+                <h1 class="text-dark fs-3 fw-bolder"><%= user.nome %></h1>
+            </div>
+        </header>
+
+        
+
+        <section id="service-details" class="service-details mt-0">
+            <div class="container">
+                <div class="row gy-5 mb-5">
+                    <div class="col-12">
+                        <div class="service-box">
+                            <h4>Informações do Usuário</h4>
+                            <div class="services-list d-flex justify-content-between">
+                                <div class="p-2 col-4 text-start">
+                                    <p><strong>Nome:</strong> <%= user.nome %></p>
+                                </div>
+                                <div class="p-2 col-4 text-center">
+                                    <p><strong>Email:</strong> <%= user.email %></p>
+                                </div>
+                                <div class="p-2 col-4 text-end">
+                                    <p><strong>Telefone:</strong> <%= user.telefone %></p>
+                                </div>
+                            </div>
+                            <div class="services-list" style="padding: 8px;">
+                                <p><strong>Biografia:</strong> <%= user.biografia %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mx-0 gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
+                    <% listaPets.forEach(function(pet) { %>
+                      <a class="mx-0" style="text-decoration: none" href="/pets/<%= pet.id_animal %>/<%= pet.user_id_user %>">
+                        <div class="card h-100">
+                          <img class="card-img-top" src="/<%= pet.caminho_imagem %>" style="width: auto;height: 250px; object-fit: cover;" onerror="this.src='/img/perfilSemFoto.png';"/>
+                          <div class="card-body">
+                            <div class="text-center">
+                              <h5 class="fw-bolder text-start">
+                                <%= pet.nome %>
+                              </h5>
+                              <h6 class="text-start">
+                                <%= pet.localizacao %>
+                              </h6>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <% }) %>
+                  </div>
+            </div>
+        </section>
+
+    <% }) %>  
+
+<%- include('layouts/default/Footer') %>
